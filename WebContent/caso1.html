@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Estilos -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/estiloSecretaria.css">
+<!-- JS -->
+<title>Secretaria: Registro Matrícula</title>
+
+</head>
+<body>
+	<!-- Titulo -->
+	<header class="text-center principal">
+	<h1>Secretaria</h1>
+	</header>
+	<div id="menu">
+	<a href="index.jsp"><span><img src="images/Home.png" alt=""></span>Inicio</a>
+	</div>
+	<!-- Contenido -->
+	<div id="contenido" class="container">
+		<!-- Inicio panel -->
+		<div class="panel panel-default">
+			<!-- Titulo panel -->
+			<div class="panel-heading">Registro pago de matrícula por
+				estudiante</div>
+			<!--Panel content-->
+			<div class="panel-body">
+				<!--Inicio formulario busqueda-->
+				<label for="exampleInput">Rut Estudiante:</label>
+				<form class="form-inline" action="BuscarEstudiante" method="get">
+				     <!-- Incput captura de rut -->
+					<input type="text" class="ancho200 form-control" name="rut"
+						required>
+					</imput>
+					 <!-- Boton submit -->
+					<button type="submit" class="btn btn-primary">Ingresar</button>
+
+				</form>
+				<p id="validacionrut">(Sin puntos y sin dígito verificador)</p>
+				 <!-- Mensaje de error en caso que no se encuentra el estudiante -->
+				${mensajedeerror}
+				<div class="imprimirestudiante alert alert-info" role="alert">
+				 <!-- Se muetra la información del estudiante -->
+				<strong>Información del estudiante</strong>
+				<p>Nombre: ${nombre}</p>
+				<p>Apellido: ${apellido}</p>
+				<p>Rut: ${rut}</p>
+				<p>Estado Matrícula: ${estado}</p>
+				</div>
+				<!--Inicio formulario registro-->
+				<form action="RegistrarPagoMatricula" method="post">
+				 <!-- El rut ingresado en el input del formulario anterior se traspasa al siguiente input -->
+					<input id="rutregistro" value="${rut}" type="text" class="ancho200 form-control" name="rutregistro" required></imput>
+					<label for="exampleInput">Monto a pagar:</label>
+					<div class="input-group ancho200">
+						<div class="input-group-addon">$</div>
+						<input type="text" class="form-control" id="exampleInputAmount"
+							placeholder="20.000" disabled>
+						<div class="input-group-addon">.00</div>
+					</div>
+					 <!-- Mensaje de respuesta -->
+					<div id="respuesta">${mensajeregistro}</div>
+					 <!-- Boton submit -->
+					<button id="boton" type="submit" class="btn btn-primary btn-lg"
+						>Registrar pago</button>					
+				</form>
+			</div>
+
+		</div>
+		<!-- Fin del panel -->
+
+
+	</div>
+	<!-- Fin del contenido -->
+</body>
+</html>
