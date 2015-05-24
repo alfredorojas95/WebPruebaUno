@@ -13,7 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/wilfri/workspace/SwingUniversidad/orm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/wilfri/workspace/SwingUniversidad/persistencia.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wilfri/workspace/WebPruebaUno/WebContent/WEB-INF/lib/orm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/wilfri/workspace/WebPruebaUno/WebContent/WEB-INF/lib/persistencia.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

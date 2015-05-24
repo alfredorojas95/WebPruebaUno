@@ -26,13 +26,21 @@ public class CrearCurso extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		/**
+		 * se obtiene el código del curso, nombre y tu del profesor desde la ventana 
+		 */
 		int codCurso = Integer.parseInt(request.getParameter("codigo"));
 		String nomCur = request.getParameter("nomC");
 		String rutProf = request.getParameter("rut");
 		
+		/**
+		 * 
+		 */
 		String resp2 = Curso.asignarProfesor(codCurso, nomCur, rutProf,"115749802");
-		
+		/**
+		 * se envía el mensaje retornado del método  asignarProfesor a la ventana
+		 * indicando si fue o no asignado el profesor
+		 */
 		request.setAttribute("mensaje2", resp2);
 		request.getRequestDispatcher("/CrearCurso.jsp").forward(request, response);
 	}

@@ -29,10 +29,14 @@
 		</dir>
 		 
 			<% 
+			//se crea un arreglo de orm.Estudiantes en donde se almacenan
+			//todos los estudiantes cuyo estado de matrícula es cero '0'
 			orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
-			
+			//se recorre el arreglo y se muestran de forma vertical
+			//en la ventana con la etiqueta p
 			for(int i=0;i<est.length;i++){ %>	
 			<p>
+			
 			<span> <%= est[i].getPersona().getNombre()%> </span>
 			<span><%=est[i].getPersona().getApellido()%> </span>
 			<span><%=est[i].getPersona().getRut() %> </span>

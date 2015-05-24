@@ -24,7 +24,7 @@
 				<div class="list-group lista1">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/Morosos.jsp'">Morosos Matricula</a> <a
 						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso3.html'">Morosos Mensualidad</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegPago.jsp'">Pago
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso6.html'">Pago
 						Profesores</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/DesactivarCurso.jsp'">Desactivar
 						Curso</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/GenerarReporte.jsp'">Balance del Año</a>
 				</div>
@@ -50,7 +50,7 @@
 			<div class="divp" style="float: left">
 				<img src="png/Pr.png" class="img-circle">
 				<h2>Profesor</h2>
-				<button type="button" class="btn btn-info boton4">Imgresar</button>
+				<button type="button" class="btn btn-info boton4">Ingresar</button>
 				<div class="list-group lista4">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/InscribirAlumno.jsp'">Insrcibir alumnos en curso</a>
 				</div>
