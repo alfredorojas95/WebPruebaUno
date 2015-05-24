@@ -41,11 +41,11 @@ body {
 			<h2>Asignar profesor</h2>
 			<br> ${mensaje2}
 			<h3>Código curso:</h3>
-			<input type="text" name="codigo"> <br>
+			<input type="text" name="codigo" required> <br>
 			<h3>Nombre curso:</h3>
-			<input type="text" name="nomC"> <br>
+			<input type="text" name="nomC" required> <br>
 			<h3>Rut profesor:</h3>
-			<input type="text" name="rut"> <br>
+			<input type="text" name="rut" required> <br>
 			<button type="submit" class="btn btn-default boton">Asignar profesor</button>
 			
 		</form>
