@@ -22,7 +22,7 @@
 				<h2>Director</h2>
 				<button type="button" class="btn btn-info boton1">Ingresar</button>
 				<div class="list-group lista1">
-					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/Morosos.jsp'">Morosos Matricula</a> <a
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/Morosos.jsp'">Morosos Matrícula</a> <a
 						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso3.html'">Morosos Mensualidad</a> <a
 						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso6.html'">Pago
 						Profesores</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/DesactivarCurso.jsp'">Desactivar
@@ -34,13 +34,13 @@
 				<h2>Secretaria</h2>
 				<button type="button" class="btn btn-info boton2">Ingresar</button>
 				<div class="list-group lista2">
-					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso1.html'">Registrar Pago Matricula</a> <a
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso1.html'">Registrar Pago Matrícula</a> <a
 						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso2.html'">Registrar Pago Mensualidad</a>
 				</div>
 			</div>
 			<div class="divp" style="float: left">
 				<img src="png/Ja.png" class="img-circle">
-				<h2>Administracion</h2>
+				<h2>Administración</h2>
 				<button type="button" class="btn btn-info boton3">Ingresar</button>
 				<div class="list-group lista3">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegPago.jsp'">Registrar Sueldo Profesor</a> <a
@@ -52,7 +52,7 @@
 				<h2>Profesor</h2>
 				<button type="button" class="btn btn-info boton4">Ingresar</button>
 				<div class="list-group lista4">
-					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/InscribirAlumno.jsp'">Insrcibir alumnos en curso</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/InscribirAlumno.jsp'">Inscribir alumnos en curso</a>
 				</div>
 			</div>
 		</div>

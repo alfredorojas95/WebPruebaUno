@@ -7,47 +7,63 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="js/codigo.js"></script>
-<link rel="stylesheet" type="text/css" href="css/estilo.css">
-<title>Insert title here</title>
-</head>
-<style type="text/css"> /* personalizar componentes (etiquestas, campo, botón, mensaje) */
-    	body {
-    		text-align: center; /* centrar todo los componentes*/
-    		font-family: Helvetica; /*  tipo de letra */
-			color: #207584; /*color de letra*/
-    	}
-    </style>
-<body>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="css/estiloListasTablas.css"/>
 
-	<div class="pa1">
-		<dir class="pa2">
+<title>Insert title here</title>
+
+</head>
+
+	<body class="cuerpo"><br>
+		
+
+		<div class="caja">
+
+			<!--Inicio caja título-->
+			<div class="titulo"><br>
+			<h1>Morosos Matrícula</h1>
+			</div><br>
+			<!--Fin caja título-->
+			
+
+			<!--Inicio caja tabla-->
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover">
+					 <thead class="info">
+      					<th>Nombre</th>
+				      	<th>Apellido</th>
+				      	<th>Rut</th>
+				      	<th>Monto</th>
+					</thead>
+					
+					<% 
+						orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
+						for(int i=0;i<est.length;i++){ 
+					%>	
+					<tr>
+						<td><%= est[i].getPersona().getNombre()%> </td>
+						<td><%=est[i].getPersona().getApellido()%> </td>
+						<td><%=est[i].getPersona().getRut() %> </td>
+						<td><%= "$20.000"%> </td>
+					</tr>
+					<% } %>
+					
+				</table>			
+			</div>
+				<!--fin caja título-->
+
+				
+			<!--Inicio caja boton atras-->
+			<div class="boton">
+				<form action="Menu.jsp">
+					<input type="submit" class="btn btn-default"  value="Volver a Menú">
+				</form>
+			</div>
+			<!--fin caja boton atras -->
 			<br>
-			<h1 class="titulo">Estudiantes morosos pago matrícula</h1>
-		</dir>
-		 
-			<% 
-			//se crea un arreglo de orm.Estudiantes en donde se almacenan
-			//todos los estudiantes cuyo estado de matrícula es cero '0'
-			orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
-			//se recorre el arreglo y se muestran de forma vertical
-			//en la ventana con la etiqueta p
-			for(int i=0;i<est.length;i++){ %>	
-			<p>
-			
-			<span> <%= est[i].getPersona().getNombre()%> </span>
-			<span><%=est[i].getPersona().getApellido()%> </span>
-			<span><%=est[i].getPersona().getRut() %> </span>
-  			</p>
- 			
-			<% } %>
-			
-			<form action="Menu.jsp">
-			<input type="submit" value="Volver a Menú">
-			</form>
-			
-	 </div>
-</body>
+			<br>
+			<br>
+		</div>
+		<!--fin  caja General-->
+	</body>
 </html>
