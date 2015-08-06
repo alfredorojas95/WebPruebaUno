@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Diagramarefinado.Academico.StaffAcademico.Curso;
+
 
 /**
  * Servlet implementation class CrearCurso
@@ -36,7 +36,8 @@ public class CrearCurso extends HttpServlet {
 		/**
 		 * 
 		 */
-		String resp2 = Curso.asignarProfesor(codCurso, nomCur, rutProf,"115749802");
+		//String resp2 = Curso.asignarProfesor(codCurso, nomCur, rutProf,"115749802");
+		String resp2 = "";
 		/**
 		 * se envía el mensaje retornado del método  asignarProfesor a la ventana
 		 * indicando si fue o no asignado el profesor

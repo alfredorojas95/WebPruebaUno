@@ -1,5 +1,6 @@
-<%@page import="Diagramarefinado.Finanza.Matricula" %>
-<%@page import="orm.Estudiante" %>
+<%@page import="serviciomatricula.ServicioMatriculaProxy" %>
+<%@page import="com.google.gson.Gson" %>
+
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -37,14 +38,17 @@
 					</thead>
 					
 					<% 
-						orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
-						for(int i=0;i<est.length;i++){ 
-					%>	
+					ServicioMatriculaProxy a = new ServicioMatriculaProxy();
+					Gson gson = new Gson();
+					String jsonMorosos = a.obtenerListMorososMatricula();
+					String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
+					for(int i=0;i<matriz.length;i++){ %>
+						
 					<tr>
-						<td><%= est[i].getPersona().getNombre()%> </td>
-						<td><%=est[i].getPersona().getApellido()%> </td>
-						<td><%=est[i].getPersona().getRut() %> </td>
-						<td><%= "$20.000"%> </td>
+						<td><%=matriz[i][0]%> </td>
+						<td><%=matriz[i][1]%> </td>
+						<td><%=matriz[i][2]%> </td>
+						<td><%=matriz[i][3]%> </td>
 					</tr>
 					<% } %>
 					

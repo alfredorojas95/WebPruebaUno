@@ -29,4 +29,24 @@
     <servlet-name>Crear</servlet-name>
     <url-pattern>/Crear</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MorososMensualidad</display-name>
+    <servlet-name>MorososMensualidad</servlet-name>
+    <servlet-class>servlet.MorososMensualidad</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MorososMensualidad</servlet-name>
+    <url-pattern>/MorososMensualidad</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AsignarProfesor</display-name>
+    <servlet-name>AsignarProfesor</servlet-name>
+    <servlet-class>servlet.AsignarProfesor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AsignarProfesor</servlet-name>
+    <url-pattern>/AsignarProfesor</url-pattern>
+  </servlet-mapping>
 </web-app>

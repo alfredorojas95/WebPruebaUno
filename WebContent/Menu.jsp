@@ -23,10 +23,10 @@
 				<button type="button" class="btn btn-info boton1">Ingresar</button>
 				<div class="list-group lista1">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/Morosos.jsp'">Morosos Matrícula</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso3.html'">Morosos Mensualidad</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso6.html'">Pago
-						Profesores</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/DesactivarCurso.jsp'">Desactivar
-						Curso</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/GenerarReporte.jsp'">Balance del Año</a>
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/MorososMensualidad.jsp'">Morosos Mensualidad</a> <a
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/ResporteSueldo.jsp'">Pago
+						Profesores</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/UpDesactivarCurso.jsp'">Desactivar
+						Curso</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/BalanceIngresoGasto.jsp'">Balance del Año</a>
 				</div>
 			</div>
 			<div class="divp" style="float: left">
@@ -34,8 +34,8 @@
 				<h2>Secretaria</h2>
 				<button type="button" class="btn btn-info boton2">Ingresar</button>
 				<div class="list-group lista2">
-					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso1.html'">Registrar Pago Matrícula</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/caso2.html'">Registrar Pago Mensualidad</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegistrarMatricula.jsp'">Registrar Pago Matrícula</a> <a
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegitrarMensualidad.jsp'">Registrar Pago Mensualidad</a>
 				</div>
 			</div>
 			<div class="divp" style="float: left">
@@ -43,8 +43,8 @@
 				<h2>Administración</h2>
 				<button type="button" class="btn btn-info boton3">Ingresar</button>
 				<div class="list-group lista3">
-					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegPago.jsp'">Registrar Sueldo Profesor</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/CrearCurso.jsp'">Crear Curso</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegistrarSueldoProfesor.jsp'">Registrar Sueldo Profesor</a> <a
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/UpCrearCursoAsignarProfesor.jsp'">Crear Curso</a>
 				</div>
 			</div>
 			<div class="divp" style="float: left">
@@ -52,7 +52,9 @@
 				<h2>Profesor</h2>
 				<button type="button" class="btn btn-info boton4">Ingresar</button>
 				<div class="list-group lista4">
-					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/InscribirAlumno.jsp'">Inscribir alumnos en curso</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/InsAlumnoEnCurso.jsp'">Inscribir alumnos en curso</a>
+					<a href="#" class="list-group-item" onclick="http://localhost:8080/WebUniversidad/RegistrarNotajsp.jsp'">Registrar Promedio</a>
+					<a href="#" class="list-group-item" onclick="http://localhost:8080/WebUniversidad/RegistrarAsistencia.jsp'">Registrar Asistencia</a>
 				</div>
 			</div>
 		</div>

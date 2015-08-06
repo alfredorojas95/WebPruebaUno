@@ -1,3 +1,6 @@
+<%@page import="servicioreporte.ServicioReporteProxy" %>
+<%@page import="com.google.gson.Gson" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,7 +18,7 @@
 
 			<!--Inicio caja título-->
 			<div class="titulo"><br>
-			<h1>Morosos Matrícula</h1>
+			<h1>Balance de ingreso y Gasto</h1>
 			</div><br>
 			<!--Fin caja título-->
 			
@@ -24,21 +27,25 @@
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered table-hover">
 					 <thead class="info">
-      					<th>Nombre</th>
-				      	<th>Apellido</th>
-				      	<th>Rut</th>
-				      	<th>Monto</th>
+					 	<th>Mes</th>
+      					<th>Ingresos</th>
+				      	<th>Gastos</th>
+				      	<th>Balance</th>
 					</thead>
 					
 					<% 
-						orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
-						for(int i=0;i<est.length;i++){ 
+					ServicioReporteProxy a = new ServicioReporteProxy();
+					Gson gson = new Gson();
+					String jsonMorosos = a.obtenerBalanceIngGasto();
+					String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
+					for(int i=0;i<matriz.length;i++){ 
 					%>	
 					<tr>
-						<td><%= est[i].getPersona().getNombre()%> </td>
-						<td><%=est[i].getPersona().getApellido()%> </td>
-						<td><%=est[i].getPersona().getRut() %> </td>
-						<td><%= "$20.000"%> </td>
+						<td><%= i+1%> </td>
+						<td><%= matriz[i][0]%> </td>
+						<td><%= matriz[i][1]%> </td>
+						<td><%= matriz[i][2] %> </td>
+						
 					</tr>
 					<% } %>
 					

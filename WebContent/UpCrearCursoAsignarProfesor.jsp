@@ -32,13 +32,14 @@
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Nombre:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Ingrese el nombre del curso" required>
+				    		<input type="text" class="form-control" name="nomCurso"  placeholder="Ingrese el nombre del curso" required>
 				    	</div>
 				    </div>
 				  
 				  	<div class="form-group">
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Crear Curso</button>
+				  			<p>${mensaje1}</p>
 				  		</div>
 				  	</div>
 				  
@@ -46,32 +47,33 @@
 				
 				
 				<!-- Segundo formulario -->	
-				<form action="Crear" method="get" class="form-horizontal">
+				<form action="AsignarProfesor" method="get" class="form-horizontal">
 					
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Código:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="ID del curso" required>
-				    	</div>
-				    </div>
-				    
-				    <div class="form-group">
-				    	<label class="col-sm-2 control-label">Rut Estudiante:</label>
-				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Sin puntos y sin dígito verificador" required>
+				    		<input type="number" class="form-control" name="codigo"  placeholder="ID del curso" required>
 				    	</div>
 				    </div>
 				    
 				    <div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut Profesor:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Sin puntos y sin dígito verificador" required>
+				    		<input type="number" class="form-control" name="rutProfe"  placeholder="Sin puntos y sin dígito verificador" required>
+				    	</div>
+				    </div>
+				    
+				    <div class="form-group">
+				    	<label class="col-sm-2 control-label">Rut Jefe de Administración:</label>
+				    	<div class="col-sm-10">
+				    		<input type="number" class="form-control" name="rutJefe"  placeholder="Sin puntos y sin dígito verificador" required>
 				    	</div>
 				    </div>
 				  
 				  	<div class="form-group">
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Asignar Profesor</button>
+				  			<p>${mensaje2}</p>
 				  		</div>
 				  	</div>
 				  

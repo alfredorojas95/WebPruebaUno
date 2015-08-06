@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Diagramarefinado.Academico.StaffAcademico.Curso;
-
+import serviciocurso.ServicioCursoProxy;
 /**
  * Servlet implementation class Crear
  */
@@ -28,22 +27,20 @@ public class Crear extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		/**
-		 * se obtiene el string desde la ventana jsp
-		 */
-		String nomCurso = request.getParameter("nombre");
-		/**
-		 *  se crea un string y se iguala al método crearCurso
-		 *  pasándole el nombre obtenido del input desde la ventana jsp
-		 *  y ademas el rut de un jefe de administración
-		 */
-		String resp1 = Curso.crearCurso(new Curso(nomCurso),"115749802");
-		/**
-		 * se envia el mensaje retornado delde el método crear curso a la 
-		 * ventana jsp
-		 */
+
+		String resp1="";
+		//se obtiene el nombre del jsp
+		String nomCurso = request.getParameter("nomCurso");
+		
+		if((nomCurso!="")&&(nomCurso.length()>=4)&&(nomCurso.length()<=20)){
+			ServicioCursoProxy crear = new ServicioCursoProxy();
+			resp1 = crear.crearCurso(nomCurso, "135749802");
+		}else {
+			resp1 = "Indicaciones: El nombre debe detener un largo entre 4 y 20 caracteres";
+		}
+		
 		request.setAttribute("mensaje1", resp1);
-		request.getRequestDispatcher("/CrearCurso.jsp").forward(request, response);
+		request.getRequestDispatcher("/UpCrearCursoAsignarProfesor.jsp").forward(request, response);
 	}
 
 	/**
