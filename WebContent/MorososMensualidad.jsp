@@ -20,32 +20,57 @@
 			</div><br>
 			<!--Fin caja título-->
 			
-
-			<!--Inicio caja tabla-->
-			<div class="table-responsive">
-				<table class="table table-striped table-bordered table-hover">
-					 <thead class="info">
-      					<th>Estudiante</th>
-				      	<th>Cantidad de cursos</th>
-				      	<th>Mes</th>
-				      	<th>Monto</th>
-					</thead>
-					
-					<% 
-						orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
-						for(int i=0;i<est.length;i++){ 
-					%>	
-					<tr>
-						<td><%= est[i].getPersona().getNombre()%> </td>
-						<td><%=est[i].getPersona().getApellido()%> </td>
-						<td><%=est[i].getPersona().getRut() %> </td>
-						<td><%= "$20.000"%> </td>
-					</tr>
-					<% } %>
-					
-				</table>			
+			
+			<!--Inicio caja datos-->
+			<div class="entrada">
+				<form action="MorososMensualidad" method="get" class="form-horizontal">
+					<div class="form-group">
+				    	<label class="col-sm-2 control-label">Mes:</label>
+				    	<div class="col-sm-10">
+				    		<input type="text" class="form-control" name="mes"  placeholder="Ingrese números entre 1-10" required>
+				    	</div>
+				    </div>
+				  
+				  	<div class="form-group">
+				  		<div class="col-sm-offset-2 col-sm-10">
+				  			<button type="submit" class="btn btn-default" name="enviar">Obtener Lista</button>
+				  		</div>
+				  	</div>
+				  	
+					<!--Inicio caja tabla-->
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							 <thead class="info">
+		      					<th>Estudiante</th>
+						      	<th>Cantidad de cursos</th>
+						      	<th>Mes</th>
+						      	<th>Monto</th>
+							</thead>
+							
+							<% 
+								//orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
+							<p>${mensaje1}</p>
+							%>	
+							<tr>
+								<td><%= %> </td>
+								<td><%=%> </td>
+								<td><%= %> </td>
+								<td><%= %> </td>
+							</tr>
+							<% } %>
+							
+						</table>			
+					</div>
+					<!--fin tabla-->
+				
+				
+				  
+				</form>			
 			</div>
-				<!--fin caja título-->
+			<!--fin caja datos-->
+			
+			
+			
 
 				
 			<!--Inicio caja boton atras-->

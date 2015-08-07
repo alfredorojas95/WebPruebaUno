@@ -28,11 +28,37 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
+			
+				<form action="BuscarCurso" method="get" class="form-horizontal">
+					<div class="form-group">
+						<h3 class="izquierda">Buscar Curso</h3>
+				    	<label class="col-sm-2 control-label">Código:</label>
+				    	<div class="col-sm-10">
+				    		<input type="text" class="form-control" name="codigo"  placeholder="ID del curso" required>
+				    	</div>
+				    </div>
+				  
+				  	<div class="form-group">
+				  		<div class="col-sm-offset-2 col-sm-10">
+				  			<button type="submit" class="btn btn-default" name="enviar">Buscar</button>
+				  		</div>	
+				  	</div>
+				  	
+				  	<div class="datos">
+				  		<div class="panel panel-info">
+				  			<h1>hola</h1>
+				  		</div>
+				  	</div>
+				  		
+				  
+				</form>
+				
 				<form action="Crear" method="get" class="form-horizontal">
 					<div class="form-group">
-				    	<label class="col-sm-2 control-label">Código del curso:</label>
+						<h3 class="izquierda">Desactivar Curso</h3>
+				    	<label class="col-sm-2 control-label">Código:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="ID del curso" required>
+				    		<input type="text" class="form-control" name="codigo"  placeholder="ID del curso" required>
 				    	</div>
 				    </div>
 				  

@@ -44,3 +44,16 @@
 	margin: 0 auto !important;
   	float: none !important;
 }
+
+.izquierda{
+	/*margin: right !important;*/
+	font-family: verdana;
+	color: #1E88E5;/*color letra del título*/
+}
+
+.datos{
+	width: 35%;
+	margin: 0 auto !important;
+	font-family: verdana;
+	color: #1E88E5;
+}
