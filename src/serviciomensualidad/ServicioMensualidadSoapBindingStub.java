@@ -25,9 +25,9 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("regPagoMensualidad");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "rutSc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "rutEs"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "rutSc"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomensualidad", "mes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
@@ -102,7 +102,7 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
         }
     }
 
-    public java.lang.String regPagoMensualidad(java.lang.String rutSc, java.lang.String rutEs, int mes) throws java.rmi.RemoteException {
+    public java.lang.String regPagoMensualidad(java.lang.String rutEs, java.lang.String rutSc, int mes) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -118,7 +118,7 @@ public class ServicioMensualidadSoapBindingStub extends org.apache.axis.client.S
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {rutSc, rutEs, new java.lang.Integer(mes)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {rutEs, rutSc, new java.lang.Integer(mes)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

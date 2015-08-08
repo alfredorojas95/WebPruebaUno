@@ -34,7 +34,7 @@ public class RegistrarMensualidad extends HttpServlet {
 		int mesA = Integer.parseInt(mes);
 		
 		ServicioMensualidadProxy registrarMensualidad = new ServicioMensualidadProxy();
-		resp1 = registrarMensualidad.regPagoMensualidad("165643214", rutEst, mesA);
+		resp1 = registrarMensualidad.regPagoMensualidad(rutEst,"165643214", mesA);
 
 		request.setAttribute("mensaje1", resp1);
 		request.getRequestDispatcher("/RegistrarMensualidad.jsp").forward(request, response);

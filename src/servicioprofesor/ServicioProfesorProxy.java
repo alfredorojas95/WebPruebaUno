@@ -44,6 +44,12 @@ public class ServicioProfesorProxy implements servicioprofesor.ServicioProfesor 
     return servicioProfesor;
   }
   
+  public java.lang.String[] buscarProfe(java.lang.String rutProfe) throws java.rmi.RemoteException{
+    if (servicioProfesor == null)
+      _initServicioProfesorProxy();
+    return servicioProfesor.buscarProfe(rutProfe);
+  }
+  
   public java.lang.String registrarAsistencia(java.lang.String rutEst, int idCurso, java.lang.String notaS, java.lang.String rutProf) throws java.rmi.RemoteException{
     if (servicioProfesor == null)
       _initServicioProfesorProxy();

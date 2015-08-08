@@ -29,7 +29,7 @@
 			<!--Inicio caja datos-->
 			<div class="entrada">
 			
-				<form action="BuscarCurso" method="get" class="form-horizontal">
+				<form action="BuscarCur" method="get" class="form-horizontal">
 					<div class="form-group">
 						<h3 class="izquierda">Buscar Curso</h3>
 				    	<label class="col-sm-2 control-label">Código:</label>
@@ -42,11 +42,12 @@
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Buscar</button>
 				  		</div>	
+				  		
 				  	</div>
 				  	
 				  	<div class="datos">
 				  		<div class="panel panel-info">
-				  			<h1>hola</h1>
+				  			<h1>${mensaje3}</h1>
 				  		</div>
 				  	</div>
 				  		

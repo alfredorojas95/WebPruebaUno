@@ -54,7 +54,8 @@
 							Gson gson = new Gson();
 							String jsonMorosos =(String)request.getAttribute("mensaje1");
 							String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
-							for(int i=0;i<matriz.length;i++){ %>	
+							for(int i=0;i<matriz.length;i++){ 
+							%>	
 								
 							<tr>
 								<td><%=matriz[i][0]%> </td>

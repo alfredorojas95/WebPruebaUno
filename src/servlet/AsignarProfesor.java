@@ -28,7 +28,7 @@ public class AsignarProfesor extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String resp2="";
-
+		
 		String codigo = request.getParameter("codigo");
 		String rutProfe = request.getParameter("rutProfe");
 		String rutJefeadm = request.getParameter("rutJefe");
@@ -37,9 +37,10 @@ public class AsignarProfesor extends HttpServlet {
 		ServicioCursoProxy asignar = new ServicioCursoProxy();
 		resp2 = asignar.asignarProfesor(cod, rutProfe, rutJefeadm);
 
-		
+
 		request.setAttribute("mensaje2", resp2);
 		request.getRequestDispatcher("/UpCrearCursoAsignarProfesor.jsp").forward(request, response);
+
 	}
 
 	/**

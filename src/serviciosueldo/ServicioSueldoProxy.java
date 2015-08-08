@@ -44,16 +44,16 @@ public class ServicioSueldoProxy implements serviciosueldo.ServicioSueldo {
     return servicioSueldo;
   }
   
-  public java.lang.String registrarSueldoProf(java.lang.String rutProf, java.lang.String rutAdm, int mes) throws java.rmi.RemoteException{
-    if (servicioSueldo == null)
-      _initServicioSueldoProxy();
-    return servicioSueldo.registrarSueldoProf(rutProf, rutAdm, mes);
-  }
-  
   public java.lang.String consSueldoProf(java.lang.String rutProf) throws java.rmi.RemoteException{
     if (servicioSueldo == null)
       _initServicioSueldoProxy();
     return servicioSueldo.consSueldoProf(rutProf);
+  }
+  
+  public java.lang.String registrarSueldoProf(java.lang.String rutProf, java.lang.String rutAdm, int mes) throws java.rmi.RemoteException{
+    if (servicioSueldo == null)
+      _initServicioSueldoProxy();
+    return servicioSueldo.registrarSueldoProf(rutProf, rutAdm, mes);
   }
   
   

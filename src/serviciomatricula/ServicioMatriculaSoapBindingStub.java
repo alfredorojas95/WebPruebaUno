@@ -24,15 +24,6 @@ public class ServicioMatriculaSoapBindingStub extends org.apache.axis.client.Stu
         org.apache.axis.description.OperationDesc oper;
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("obtenerListMorososMatricula");
-        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        oper.setReturnClass(java.lang.String.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://serviciomatricula", "obtenerListMorososMatriculaReturn"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[0] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("pagarMatricula");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://serviciomatricula", "rutEstudiante"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
@@ -41,6 +32,15 @@ public class ServicioMatriculaSoapBindingStub extends org.apache.axis.client.Stu
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://serviciomatricula", "pagarMatriculaReturn"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[0] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("obtenerListMorososMatricula");
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://serviciomatricula", "obtenerListMorososMatriculaReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
@@ -98,7 +98,7 @@ public class ServicioMatriculaSoapBindingStub extends org.apache.axis.client.Stu
         }
     }
 
-    public java.lang.String obtenerListMorososMatricula() throws java.rmi.RemoteException {
+    public java.lang.String pagarMatricula(java.lang.String rutEstudiante, java.lang.String rutSecretaria) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -110,11 +110,11 @@ public class ServicioMatriculaSoapBindingStub extends org.apache.axis.client.Stu
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomatricula", "obtenerListMorososMatricula"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomatricula", "pagarMatricula"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {rutEstudiante, rutSecretaria});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -132,7 +132,7 @@ public class ServicioMatriculaSoapBindingStub extends org.apache.axis.client.Stu
 }
     }
 
-    public java.lang.String pagarMatricula(java.lang.String rutEstudiante, java.lang.String rutSecretaria) throws java.rmi.RemoteException {
+    public java.lang.String obtenerListMorososMatricula() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -144,11 +144,11 @@ public class ServicioMatriculaSoapBindingStub extends org.apache.axis.client.Stu
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomatricula", "pagarMatricula"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://serviciomatricula", "obtenerListMorososMatricula"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {rutEstudiante, rutSecretaria});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

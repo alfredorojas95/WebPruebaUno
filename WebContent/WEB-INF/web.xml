@@ -129,4 +129,24 @@
     <servlet-name>ReporteProf</servlet-name>
     <url-pattern>/ReporteProf</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InscribirEst</display-name>
+    <servlet-name>InscribirEst</servlet-name>
+    <servlet-class>servlet.InscribirEst</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InscribirEst</servlet-name>
+    <url-pattern>/InscribirEst</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BuscarCur</display-name>
+    <servlet-name>BuscarCur</servlet-name>
+    <servlet-class>servlet.BuscarCur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BuscarCur</servlet-name>
+    <url-pattern>/BuscarCur</url-pattern>
+  </servlet-mapping>
 </web-app>

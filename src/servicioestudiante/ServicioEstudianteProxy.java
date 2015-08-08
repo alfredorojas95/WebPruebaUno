@@ -44,6 +44,12 @@ public class ServicioEstudianteProxy implements servicioestudiante.ServicioEstud
     return servicioEstudiante;
   }
   
+  public java.lang.String[] buscarEst(java.lang.String rutEst) throws java.rmi.RemoteException{
+    if (servicioEstudiante == null)
+      _initServicioEstudianteProxy();
+    return servicioEstudiante.buscarEst(rutEst);
+  }
+  
   public java.lang.String obtenerSituacionEstudiante(java.lang.String rutEstudiante) throws java.rmi.RemoteException{
     if (servicioEstudiante == null)
       _initServicioEstudianteProxy();

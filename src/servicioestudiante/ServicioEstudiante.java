@@ -8,5 +8,6 @@
 package servicioestudiante;
 
 public interface ServicioEstudiante extends java.rmi.Remote {
+    public java.lang.String[] buscarEst(java.lang.String rutEst) throws java.rmi.RemoteException;
     public java.lang.String obtenerSituacionEstudiante(java.lang.String rutEstudiante) throws java.rmi.RemoteException;
 }

@@ -44,6 +44,12 @@ public class ServicioCursoProxy implements serviciocurso.ServicioCurso {
     return servicioCurso;
   }
   
+  public java.lang.String asignarProfesor(int id, java.lang.String rutProfe, java.lang.String rutJefeAdm) throws java.rmi.RemoteException{
+    if (servicioCurso == null)
+      _initServicioCursoProxy();
+    return servicioCurso.asignarProfesor(id, rutProfe, rutJefeAdm);
+  }
+  
   public java.lang.String desactivarCurso(int id, java.lang.String rutDirector) throws java.rmi.RemoteException{
     if (servicioCurso == null)
       _initServicioCursoProxy();
@@ -56,10 +62,10 @@ public class ServicioCursoProxy implements serviciocurso.ServicioCurso {
     return servicioCurso.crearCurso(nombreCurso, rutJefeAdm);
   }
   
-  public java.lang.String asignarProfesor(int id, java.lang.String rutProfe, java.lang.String rutJefeAdm) throws java.rmi.RemoteException{
+  public java.lang.String[] buscarCurso(int id) throws java.rmi.RemoteException{
     if (servicioCurso == null)
       _initServicioCursoProxy();
-    return servicioCurso.asignarProfesor(id, rutProfe, rutJefeAdm);
+    return servicioCurso.buscarCurso(id);
   }
   
   public java.lang.String inscribirEstudiantes(int idCurso, java.lang.String rutEstudiante, java.lang.String rutProf) throws java.rmi.RemoteException{

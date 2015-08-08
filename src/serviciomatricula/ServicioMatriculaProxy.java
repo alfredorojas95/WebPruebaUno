@@ -44,16 +44,16 @@ public class ServicioMatriculaProxy implements serviciomatricula.ServicioMatricu
     return servicioMatricula;
   }
   
-  public java.lang.String obtenerListMorososMatricula() throws java.rmi.RemoteException{
-    if (servicioMatricula == null)
-      _initServicioMatriculaProxy();
-    return servicioMatricula.obtenerListMorososMatricula();
-  }
-  
   public java.lang.String pagarMatricula(java.lang.String rutEstudiante, java.lang.String rutSecretaria) throws java.rmi.RemoteException{
     if (servicioMatricula == null)
       _initServicioMatriculaProxy();
     return servicioMatricula.pagarMatricula(rutEstudiante, rutSecretaria);
+  }
+  
+  public java.lang.String obtenerListMorososMatricula() throws java.rmi.RemoteException{
+    if (servicioMatricula == null)
+      _initServicioMatriculaProxy();
+    return servicioMatricula.obtenerListMorososMatricula();
   }
   
   

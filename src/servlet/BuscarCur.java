@@ -7,18 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import serviciosueldo.ServicioSueldoProxy;
+import serviciocurso.ServicioCursoProxy;
 
 /**
- * Servlet implementation class ReporteProf
+ * Servlet implementation class BuscarCur
  */
-public class ReporteProf extends HttpServlet {
+public class BuscarCur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReporteProf() {
+    public BuscarCur() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,17 +27,20 @@ public class ReporteProf extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String resp1="";
+
+		String codigo = request.getParameter("codigo");
+		int cod = Integer.parseInt(codigo);
 		
-		String resultado="";
-		String rutProfesor = request.getParameter("rutProfe");
-
-
-		ServicioSueldoProxy sueldos = new ServicioSueldoProxy();
-		resultado = sueldos.consSueldoProf(rutProfesor);
+		ServicioCursoProxy buscar = new ServicioCursoProxy();
+		String[] datos = buscar.buscarCurso(cod);
+		resp1=datos[0]+"\n";
+		resp1+=datos[1]+"\n";
+		resp1+=datos[2]+"\n";
+		//resp1+=datos[3]+"\n";
 		
-
-		request.setAttribute("mensaje1", resultado);
-		request.getRequestDispatcher("/ReporteSueldo.jsp").forward(request, response);
+		request.setAttribute("mensaje3", resp1);
+		request.getRequestDispatcher("/UpDesactivarCurso.jsp").forward(request, response);
 	}
 
 	/**
