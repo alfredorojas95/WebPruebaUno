@@ -28,33 +28,33 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
-				<form action="Crear" method="get" class="form-horizontal">
+				<form action="RegistrarPromedio" method="get" class="form-horizontal">
 					
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut Estudiante:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Sin puntos y sin dígito verificador" required>
+				    		<input type="text" class="form-control" name="rutEst"  placeholder="Sin puntos y sin dígito verificador" required>
 				    	</div>
 				    </div>
 				    
 				    <div class="form-group">
 				    	<label class="col-sm-2 control-label">Nota:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Promedio del estudiante" required>
+				    		<input type="text" class="form-control" name="nota"  placeholder="Promedio del estudiante" required>
 				    	</div>
 				    </div>
 				    
 				    <div class="form-group">
 				    	<label class="col-sm-2 control-label">Código Curso:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="id Curso" required>
+				    		<input type="text" class="form-control" name="cod"  placeholder="id Curso" required>
 				    	</div>
 				    </div>
 				    
 				    <div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut Profesor:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Sin puntos y sin dígito verificador" required>
+				    		<input type="text" class="form-control" name="rutProf"  placeholder="Sin puntos y sin dígito verificador" required>
 				    	</div>
 				    </div>
 				  
@@ -62,6 +62,7 @@
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Registrar Nota</button>
 				  		</div>
+				  		<p>${mensaje1}</p>
 				  	</div>
 				  
 				</form>			

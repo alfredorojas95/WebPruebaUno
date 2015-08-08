@@ -7,18 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import serviciomensualidad.ServicioMensualidadProxy;
+import servicioprofesor.ServicioProfesorProxy;
 
 /**
- * Servlet implementation class MorososMensualidad
+ * Servlet implementation class RegistrarPromedio
  */
-public class MorososMensualidad extends HttpServlet {
+public class RegistrarPromedio extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MorososMensualidad() {
+    public RegistrarPromedio() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,17 +27,20 @@ public class MorososMensualidad extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String resp1="";
-		//se obtiene el mes del jsp
-		String mes = request.getParameter("mes");
-		int nMes = Integer.parseInt(mes);
-		if((nMes>=1)&&(nMes<=10)){
-			ServicioMensualidadProxy morosos = new ServicioMensualidadProxy();
-			resp1 = morosos.obtenerListMorososMensualidad(nMes);
-		}
+
+		String rutEst = request.getParameter("rutEst");
+		String notaS = request.getParameter("nota");
+		String idCurso = request.getParameter("cod");
+		String rutProf = request.getParameter("rutProf");
+		int id = Integer.parseInt(idCurso);
+		
+		ServicioProfesorProxy promedio = new ServicioProfesorProxy();
+		resp1 = promedio.registrarPromedio(rutEst, id, notaS, rutProf);
+
+		
 		request.setAttribute("mensaje1", resp1);
-		request.getRequestDispatcher("/MororsosMensualidad.jsp").forward(request, response);
+		request.getRequestDispatcher("/RegistrarNotajsp.jsp").forward(request, response);
 	}
 
 	/**

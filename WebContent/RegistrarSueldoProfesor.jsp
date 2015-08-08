@@ -28,12 +28,12 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
-				<form action="Crear" method="get" class="form-horizontal">
+				<form action="PagarSueldo" method="get" class="form-horizontal">
 					<!--rut estudiante -->
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut Profesor:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Sin puntos y sin dígito verificador" required>
+				    		<input type="text" class="form-control" name="rutProfesor"  placeholder="Sin puntos y sin dígito verificador" required>
 				    	</div> 	
 				    </div>
 				    <!-- fin rut -->
@@ -42,7 +42,7 @@
 				    <div class="form-group">
 				    	<label class="col-sm-2 control-label">Mes</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Números entre 1-9" required>
+				    		<input type="text" class="form-control" name="mes"  placeholder="Números entre 1-9" required>
 				    	</div>
 				    </div>
 				    <!-- fin mes a pagar-->
@@ -51,6 +51,7 @@
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Registrar sueldo</button>
 				  		</div>
+				  		<p>${mensaje1}</p>
 				  	</div>
 				  
 				</form>			

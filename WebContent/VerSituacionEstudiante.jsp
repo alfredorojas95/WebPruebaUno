@@ -29,11 +29,11 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
-				<form action="Crear" method="get" class="form-horizontal">
+				<form action="VerSituacion" method="get" class="form-horizontal">
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut Estudiante:</label>
 				    	<div class="col-sm-10">
-				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Rut Estudiante" required>
+				    		<input type="text" class="form-control" name="rutEstudiante"  placeholder="Sin puntos y sin dígito verificador" required>
 				    	</div>
 				    </div>
 				  
@@ -41,6 +41,7 @@
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Consultar situación</button>
 				  		</div>
+				  		<p>${mensaje1}</p>
 				  	</div>
 				  
 				</form>			

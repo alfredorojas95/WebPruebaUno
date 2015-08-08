@@ -1,22 +1,24 @@
 package servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import serviciosueldo.ServicioSueldoProxy;
 
 /**
- * Servlet implementation class CrearCurso
+ * Servlet implementation class ReporteProf
  */
-public class CrearCurso extends HttpServlet {
+public class ReporteProf extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CrearCurso() {
+    public ReporteProf() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -25,25 +27,17 @@ public class CrearCurso extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		/**
-		 * se obtiene el código del curso, nombre y tu del profesor desde la ventana 
-		 */
-		int codCurso = Integer.parseInt(request.getParameter("codigo"));
-		String nomCur = request.getParameter("nomC");
-		String rutProf = request.getParameter("rut");
 		
-		/**
-		 * 
-		 */
-		//String resp2 = Curso.asignarProfesor(codCurso, nomCur, rutProf,"115749802");
-		String resp2 = "";
-		/**
-		 * se envía el mensaje retornado del método  asignarProfesor a la ventana
-		 * indicando si fue o no asignado el profesor
-		 */
-		request.setAttribute("mensaje2", resp2);
-		request.getRequestDispatcher("/CrearCurso.jsp").forward(request, response);
+		String resultado="";
+		String rutProfesor = request.getParameter("rutProf");
+
+
+		ServicioSueldoProxy sueldos = new ServicioSueldoProxy();
+		resultado = sueldos.consSueldoProf(rutProfesor);
+		
+
+		request.setAttribute("mensaje1", resultado);
+		request.getRequestDispatcher("/MororsosMensualidad.jsp").forward(request, response);
 	}
 
 	/**

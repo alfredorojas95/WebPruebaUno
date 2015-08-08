@@ -53,7 +53,7 @@
 				  
 				</form>
 				
-				<form action="Crear" method="get" class="form-horizontal">
+				<form action="DesactivarCurso" method="get" class="form-horizontal">
 					<div class="form-group">
 						<h3 class="izquierda">Desactivar Curso</h3>
 				    	<label class="col-sm-2 control-label">Código:</label>
@@ -66,6 +66,7 @@
 				  		<div class="col-sm-offset-2 col-sm-10">
 				  			<button type="submit" class="btn btn-default" name="enviar">Desactivar</button>
 				  		</div>
+				  		<p>${mensaje1}</p>
 				  	</div>
 				  
 				</form>			

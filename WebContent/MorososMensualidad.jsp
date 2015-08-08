@@ -1,3 +1,5 @@
+<%@page import="com.google.gson.Gson" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -48,14 +50,17 @@
 							</thead>
 							
 							<% 
-								//orm.Estudiante []est = Matricula.obtenerListMorososMatricula();
-							<p>${mensaje1}</p>
-							%>	
+
+							Gson gson = new Gson();
+							String jsonMorosos =(String)request.getAttribute("mensaje1");
+							String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
+							for(int i=0;i<matriz.length;i++){ %>	
+								
 							<tr>
-								<td><%= %> </td>
-								<td><%=%> </td>
-								<td><%= %> </td>
-								<td><%= %> </td>
+								<td><%=matriz[i][0]%> </td>
+								<td><%=matriz[i][1]%> </td>
+								<td><%=matriz[i][2]%> </td>
+								<td><%=matriz[i][3]%> </td>
 							</tr>
 							<% } %>
 							

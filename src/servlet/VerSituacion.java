@@ -7,18 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import serviciomensualidad.ServicioMensualidadProxy;
+import servicioestudiante.ServicioEstudianteProxy;
 
 /**
- * Servlet implementation class MorososMensualidad
+ * Servlet implementation class VerSituacion
  */
-public class MorososMensualidad extends HttpServlet {
+public class VerSituacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MorososMensualidad() {
+    public VerSituacion() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,17 +27,15 @@ public class MorososMensualidad extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String resp1="";
-		//se obtiene el mes del jsp
-		String mes = request.getParameter("mes");
-		int nMes = Integer.parseInt(mes);
-		if((nMes>=1)&&(nMes<=10)){
-			ServicioMensualidadProxy morosos = new ServicioMensualidadProxy();
-			resp1 = morosos.obtenerListMorososMensualidad(nMes);
-		}
+		//se obtiene el nombre del jsp
+		String rutEst = request.getParameter("rutEstudiante");
+		
+		ServicioEstudianteProxy situacion = new ServicioEstudianteProxy();
+		resp1 = situacion.obtenerSituacionEstudiante(rutEst);
+
 		request.setAttribute("mensaje1", resp1);
-		request.getRequestDispatcher("/MororsosMensualidad.jsp").forward(request, response);
+		request.getRequestDispatcher("/VerSituacionEstudiante.jsp").forward(request, response);
 	}
 
 	/**
