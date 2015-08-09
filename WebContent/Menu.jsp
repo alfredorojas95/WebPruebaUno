@@ -53,8 +53,9 @@
 				<button type="button" class="btn btn-info boton4">Ingresar</button>
 				<div class="list-group lista4">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/InsAlumnoEnCurso.jsp'">Inscribir alumnos en curso</a>
-					<a href="#" class="list-group-item" onclick="http://localhost:8080/WebUniversidad/RegistrarNotajsp.jsp'">Registrar Promedio</a>
-					<a href="#" class="list-group-item" onclick="http://localhost:8080/WebUniversidad/RegistrarAsistencia.jsp'">Registrar Asistencia</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegistrarNotajsp.jsp'">Registrar Promedio</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/RegistrarAsistencia.jsp'">Registrar Asistencia</a>
+					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/VerSituacionEstudiante.jsp'">Ver situación</a>
 				</div>
 			</div>
 		</div>

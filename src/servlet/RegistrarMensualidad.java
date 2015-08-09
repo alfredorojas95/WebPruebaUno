@@ -37,7 +37,7 @@ public class RegistrarMensualidad extends HttpServlet {
 		resp1 = registrarMensualidad.regPagoMensualidad(rutEst,"165643214", mesA);
 
 		request.setAttribute("mensaje1", resp1);
-		request.getRequestDispatcher("/RegistrarMensualidad.jsp").forward(request, response);
+		request.getRequestDispatcher("/RegitrarMensualidad.jsp").forward(request, response);
 	}
 
 	/**

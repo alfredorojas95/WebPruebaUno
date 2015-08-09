@@ -1,4 +1,9 @@
 <%@page import="com.google.gson.Gson" %>
+<%@page import="com.google.gson.Gson"%>
+<%@page import="com.google.gson.JsonElement"%>
+<%@page import="com.google.gson.JsonObject"%>
+<%@page import="com.google.gson.JsonParser"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -37,8 +42,24 @@
 				  			<button type="submit" class="btn btn-default" name="enviar">Obtener Sueldos</button>
 				  		</div>
 				  	</div>
-				  	
-					<!--Inicio caja tabla-->
+				
+				  
+				</form>			
+			</div>
+			<!--fin caja datos-->
+			
+			<% 
+			String[][]matriz=null;
+			Gson gson = new Gson();
+			String jsonSueldos =(String)request.getAttribute("mensaje1");
+			if(jsonSueldos.equals("No se encontró el profesor")){%>
+				<p>No se encontraron sueldos para el rut ingresado</p>
+			<%} else {
+				matriz = gson.fromJson(jsonSueldos, String[][].class);
+			}%>
+			
+			
+			<!--Inicio caja tabla-->
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover">
 							 <thead class="info">
@@ -49,35 +70,22 @@
 						      	<th>Estado pago</th>
 							</thead>
 							
-							<% 
-
-							Gson gson = new Gson();
-							String jsonSueldos =(String)request.getAttribute("mensaje1");
-							String[][] matriz = gson.fromJson(jsonSueldos, String[][].class);
-							for(int i=0;i<matriz.length;i++){ 
-							%>	
+							
+							<%
+							for(int i=0;i<matriz.length;i++){%>	
 								
 							<tr>
-								<td><%=matriz[i][0]%> </td>
-								<td><%=matriz[i][1]%> </td>
-								<td><%=matriz[i][2]%> </td>
-								<td><%=matriz[i][3]%> </td>
-								<td><%=matriz[i][4]%> </td>
+								<td><%=""+matriz[i][0]%> </td>
+								<td><%=""+matriz[i][1]%> </td>
+								<td><%=""+matriz[i][2]%> </td>
+								<td><%=""+matriz[i][3]%> </td>
+								<td><%=""+matriz[i][4]%> </td>
 							</tr>
 							<% } %>
 							
 						</table>			
 					</div>
 					<!--fin tabla-->
-				
-				
-				  
-				</form>			
-			</div>
-			<!--fin caja datos-->
-			
-			
-			
 
 				
 			<!--Inicio caja boton atras-->

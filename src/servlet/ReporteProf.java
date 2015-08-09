@@ -35,8 +35,12 @@ public class ReporteProf extends HttpServlet {
 		ServicioSueldoProxy sueldos = new ServicioSueldoProxy();
 		resultado = sueldos.consSueldoProf(rutProfesor);
 		
+		if(resultado!=null){
+			request.setAttribute("mensaje1", resultado);
+		} else {
+			request.setAttribute("mensaje1", "No se encontró el profesor");
+		}
 
-		request.setAttribute("mensaje1", resultado);
 		request.getRequestDispatcher("/ReporteSueldo.jsp").forward(request, response);
 	}
 

@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css" href="css/estiloListasTablas.css"/>
 <title>Insert title here</title>
 </head>
-
 <body class="cuerpo"><br>
 		
 
@@ -57,13 +56,22 @@
 						      	<th>Monto</th>
 							</thead>
 							
-							<% 
+							<%String jsonMorosos=(String)session.getAttribute("mensaje1");%>
 
+							<% 
 							Gson gson = new Gson();
-							String jsonMorosos =(String)request.getAttribute("mensaje1");
-							String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
-							for(int i=0;i<matriz.length;i++){ 
-							%>	
+							String[][] matriz=null;
+							//String jsonMorosos =(String)request.getAttribute("mensaje1");
+							
+							if (jsonMorosos!=null){
+								matriz = gson.fromJson(jsonMorosos, String[][].class);
+							}
+						
+								
+							 %>
+							
+							
+							<% for(int i=0;i<matriz.length;i++){ %>	
 								
 							<tr>
 								<td><%=matriz[i][0]%> </td>
@@ -91,5 +99,4 @@
 		</div>
 		<!--fin  caja General-->
 	</body>
-	
 </html>
