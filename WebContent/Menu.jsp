@@ -23,7 +23,7 @@
 				<button type="button" class="btn btn-info boton1">Ingresar</button>
 				<div class="list-group lista1">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/Morosos.jsp'">Morosos Matrícula</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/MorososMensualidad.jsp'">Morosos Mensualidad</a> <a
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/MorososMens.jsp'">Morosos Mensualidad</a> <a
 						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/ReporteSueldo.jsp'">Pago
 						Profesores</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/UpDesactivarCurso.jsp'">Desactivar
 						Curso</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/BalanceIngresoGasto.jsp'">Balance del Año</a>

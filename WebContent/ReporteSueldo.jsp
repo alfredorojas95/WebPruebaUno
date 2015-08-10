@@ -30,7 +30,7 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
-				<form action="ReporteSueldo.jsp" method="get" class="form-horizontal">
+				<form action="ReporteProf" method="get" class="form-horizontal">
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut:</label>
 				    	<div class="col-sm-10">
@@ -65,17 +65,20 @@
 							
 							
 							<% 
-							String rutProf = request.getParameter("rutProfe");
-							if(rutProf!=null){
+							String jsonSueldos = (String)request.getAttribute("mensaje1");
+							String matriz[][] = null;
+							if(jsonSueldos!=null){
+								if(jsonSueldos.equals("No se encontró el profesor")){%>
+								<h4>No se encontraron sueldos para el rut ingresado</h4>
+									
+							<%} else {
+								Gson gson = new Gson();
+								
+								matriz = gson.fromJson(jsonSueldos, String[][].class);
+								
+								for(int i=0;i<matriz.length;i++){ 
 							
-							ServicioSueldoProxy sueldos = new ServicioSueldoProxy();
-						
 							
-							Gson gson = new Gson();
-							String jsonMorosos = sueldos.consSueldoProf(rutProf);
-							String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
-							
-							for(int i=0;i<matriz.length;i++){ 
 							%>	
 								
 							<tr>
@@ -85,7 +88,8 @@
 								<td><%=matriz[i][3]%> </td>
 								<td><%=matriz[i][4]%> </td>
 							</tr>
-							<% }} %>
+							<% }}}%>
+							
 							
 						</table>			
 					</div>
