@@ -24,7 +24,7 @@
 				<div class="list-group lista1">
 					<a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/Morosos.jsp'">Morosos Matrícula</a> <a
 						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/MorososMensualidad.jsp'">Morosos Mensualidad</a> <a
-						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/ResporteSueldo.jsp'">Pago
+						href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/ReporteSueldo.jsp'">Pago
 						Profesores</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/UpDesactivarCurso.jsp'">Desactivar
 						Curso</a> <a href="#" class="list-group-item" onclick="location='http://localhost:8080/WebUniversidad/BalanceIngresoGasto.jsp'">Balance del Año</a>
 				</div>

@@ -29,7 +29,7 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
-				<form action="MorososMensualidad" method="get" class="form-horizontal">
+				<form action="MorososMensualidad.jsp" method="get" class="form-horizontal">
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Mes:</label>
 				    	<div class="col-sm-10">
@@ -58,10 +58,17 @@
 							</thead>
 							
 							<% 
-
+							String MM = request.getParameter("mes");
+							if(MM!=null){
+							int mes = Integer.parseInt(MM);
+							
+							ServicioMensualidadProxy morosos = new ServicioMensualidadProxy();
+						
+							
 							Gson gson = new Gson();
-							String jsonMorosos =(String)request.getAttribute("mensaje1");
+							String jsonMorosos =morosos.obtenerListMorososMensualidad(mes);
 							String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
+							
 							for(int i=0;i<matriz.length;i++){ 
 							%>	
 								
@@ -71,7 +78,7 @@
 								<td><%=matriz[i][2]%> </td>
 								<td><%=matriz[i][3]%> </td>
 							</tr>
-							<% } %>
+							<% } } %>
 							
 						</table>			
 					</div>

@@ -56,22 +56,18 @@
 						      	<th>Monto</th>
 							</thead>
 							
-							<%String jsonMorosos=(String)session.getAttribute("mensaje1");%>
+							
 
 							<% 
-							Gson gson = new Gson();
-							String[][] matriz=null;
-							//String jsonMorosos =(String)request.getAttribute("mensaje1");
-							
-							if (jsonMorosos!=null){
-								matriz = gson.fromJson(jsonMorosos, String[][].class);
-							}
+							String jsonMorosos =(String)request.getAttribute("mensaje1");
 						
-								
-							 %>
+							if (jsonMorosos!=null){
+								Gson gson = new Gson();
+								String[][] matriz=null;
+								matriz = gson.fromJson(jsonMorosos, String[][].class);
 							
 							
-							<% for(int i=0;i<matriz.length;i++){ %>	
+							 for(int i=0;i<matriz.length;i++){ %>	
 								
 							<tr>
 								<td><%=matriz[i][0]%> </td>
@@ -80,7 +76,7 @@
 								<td><%=matriz[i][3]%> </td>
 							</tr>
 							<% } %>
-							
+							<% } %>
 						</table>			
 					</div>
 					<!--fin tabla-->

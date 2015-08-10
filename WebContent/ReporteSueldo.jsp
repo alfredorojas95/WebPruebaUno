@@ -3,6 +3,7 @@
 <%@page import="com.google.gson.JsonElement"%>
 <%@page import="com.google.gson.JsonObject"%>
 <%@page import="com.google.gson.JsonParser"%>
+<%@page import="serviciosueldo.ServicioSueldoProxy"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -29,7 +30,7 @@
 			
 			<!--Inicio caja datos-->
 			<div class="entrada">
-				<form action="ReporteProf" method="get" class="form-horizontal">
+				<form action="ReporteSueldo.jsp" method="get" class="form-horizontal">
 					<div class="form-group">
 				    	<label class="col-sm-2 control-label">Rut:</label>
 				    	<div class="col-sm-10">
@@ -48,15 +49,7 @@
 			</div>
 			<!--fin caja datos-->
 			
-			<% 
-			String[][]matriz=null;
-			Gson gson = new Gson();
-			String jsonSueldos =(String)request.getAttribute("mensaje1");
-			if(jsonSueldos.equals("No se encontró el profesor")){%>
-				<p>No se encontraron sueldos para el rut ingresado</p>
-			<%} else {
-				matriz = gson.fromJson(jsonSueldos, String[][].class);
-			}%>
+
 			
 			
 			<!--Inicio caja tabla-->
@@ -71,17 +64,28 @@
 							</thead>
 							
 							
-							<%
-							for(int i=0;i<matriz.length;i++){%>	
+							<% 
+							String rutProf = request.getParameter("rutProfe");
+							if(rutProf!=null){
+							
+							ServicioSueldoProxy sueldos = new ServicioSueldoProxy();
+						
+							
+							Gson gson = new Gson();
+							String jsonMorosos = sueldos.consSueldoProf(rutProf);
+							String[][] matriz = gson.fromJson(jsonMorosos, String[][].class);
+							
+							for(int i=0;i<matriz.length;i++){ 
+							%>	
 								
 							<tr>
-								<td><%=""+matriz[i][0]%> </td>
-								<td><%=""+matriz[i][1]%> </td>
-								<td><%=""+matriz[i][2]%> </td>
-								<td><%=""+matriz[i][3]%> </td>
-								<td><%=""+matriz[i][4]%> </td>
+								<td><%=matriz[i][0]%> </td>
+								<td><%=matriz[i][1]%> </td>
+								<td><%=matriz[i][2]%> </td>
+								<td><%=matriz[i][3]%> </td>
+								<td><%=matriz[i][4]%> </td>
 							</tr>
-							<% } %>
+							<% }} %>
 							
 						</table>			
 					</div>
